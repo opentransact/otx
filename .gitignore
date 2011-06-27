@@ -1,3 +1,4 @@
 .rvmrc
 .powenv
 tmp
+db/*.sqlite3

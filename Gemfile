@@ -12,3 +12,11 @@ gem 'thin'
 gem 'i18n'
 gem 'opentransact'
 gem 'RedCloth'
+gem 'state_machine'
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'guard-rspec'
+  gem 'growl'
+end

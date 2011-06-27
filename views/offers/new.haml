@@ -1,0 +1,26 @@
+%h1 Create offer
+.todo
+  We will want to present existing offers that match users request here
+%form{:action=>"/offers", :method=>"post"}
+  %fieldset
+    %legend I want
+    %p
+      %label{:for=>"offer_wanted_amount"} Amount
+      %input{:type=>"number", :name=>"wanted_amount", :id=>"offer_wanted_amount", :value=>@offer.wanted_amount}
+    %p
+      %label{:for=>"offer_wanted_url"} Asset
+      %input{:type=>"url", :name=>"wanted_url", :id=>"offer_wanted_url", :value=>@offer.wanted_url}
+  %fieldset
+    %legend I offer
+    %p
+      %label{:for=>"offer_offered_amount"} Amount
+      %input{:type=>"number", :name=>"offered_amount", :id=>"offer_offered_amount", :value=>@offer.offered_amount}
+    %p
+      %label{:for=>"offer_offered_url"} Asset
+      %input{:type=>"url", :name=>"offered_url", :id=>"offer_offered_url", :value=>@offer.offered_url}
+
+  %p
+    %label{:for=>"offer_expires"} My offer is valid until
+    %input{:type=>"date", :name=>"expires", :id=>"offer_expires", :value=>@offer.expires}
+  %p
+    %button{:type=>:submit} Make offer and authorize payment...

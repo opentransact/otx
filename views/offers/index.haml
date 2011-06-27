@@ -1,0 +1,17 @@
+%h1 Offers
+
+%table.offers
+  %tr
+    %th Offered
+    %th Wanted
+    %th Offered Amount
+    %th Watned Amount
+    %th Expires
+
+  -@offers.each do |offer|
+    %tr.offer{:id=>"offer_#{offer.id}"}
+      %td= offer.offered_url
+      %td= offer.wanted_url
+      %td= offer.offered_amount
+      %td= offer.wanted_amount
+      %td= offer.expires

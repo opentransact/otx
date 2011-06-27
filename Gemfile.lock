@@ -16,7 +16,13 @@ GEM
     builder (2.1.2)
     configuration (1.3.1)
     daemons (1.1.4)
+    diff-lcs (1.1.2)
     eventmachine (0.12.10)
+    growl (1.0.3)
+    guard (0.4.2)
+      thor (~> 0.14.6)
+    guard-rspec (0.4.0)
+      guard (>= 0.4.0)
     haml (3.1.2)
     heroku (2.3.3)
       launchy (>= 0.3.2)
@@ -36,20 +42,32 @@ GEM
       oauth (~> 0.4.4)
     pg (0.11.0)
     rack (1.3.0)
+    rack-test (0.6.0)
+      rack (>= 1.0)
     rake (0.9.2)
     rest-client (1.6.3)
       mime-types (>= 1.16)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
     sinatra (1.2.6)
       rack (~> 1.1)
       tilt (< 2.0, >= 1.2.2)
     sinatra-activerecord (0.1.3)
       sinatra (>= 0.9.4)
     sqlite3 (1.3.3)
+    state_machine (1.0.1)
     term-ansicolor (1.0.5)
     thin (1.2.11)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
+    thor (0.14.6)
     tilt (1.3.2)
     tzinfo (0.3.28)
 
@@ -59,13 +77,18 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   activerecord
+  growl
+  guard-rspec
   haml
   heroku
   i18n
   oauth
   opentransact
   pg
+  rack-test
+  rspec
   sinatra
   sinatra-activerecord
   sqlite3
+  state_machine
   thin
