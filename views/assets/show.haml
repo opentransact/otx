@@ -1,0 +1,8 @@
+%h1 Asset
+%dl
+  %dt Transaction URL
+  %dd
+    = @asset.transaction_url
+  %dt Assets URL
+  %dd
+    = @asset.assets_url || 'not registered'
