@@ -1,0 +1,23 @@
+%h1 Register an asset
+%form{:action => '/assets', :method => :post}
+  %fieldset
+    %legend Asset Info (Required)
+    %p
+      %label{:for => "transaction_url"} Transaction URL
+      %input{:type => "url", :name => "transaction_url", :id => "asset_transaction_url", :value => @asset.transaction_url}
+  %fieldset
+    %legend FSP Info (Optional)
+    %p
+      %label{:for => "assets_url"} Assets URL
+      %input{:type => "url", :name => "assets_url", :id => "asset_assets_url", :value => @asset.assets_url}
+  %fieldset
+    %legend OAuth Consumer Info (Required)
+    %p
+      %label{:for => "oauth_consumer_key"} OAuth Consumer Key
+      %input{:type => "text", :name => "oauth_consumer_key", :id => "asset_oauth_consumer_key", :value => @asset.oauth_consumer_key}
+    %p
+      %label{:for => "oauth_consumer_secret"} OAuth Consumer Secret
+      %input{:type => "text", :name => "oauth_consumer_secret", :id => "asset_oauth_consumer_secret", :value => @asset.oauth_consumer_secret}
+  %p
+    %button{:type=>:submit} Register
+  %p (You'll need to authenticate yourself as the asset issuer in next step)

@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'active_record'
+require 'validate_url'
 require 'active_support/all'
 require 'oauth'
 require 'oauth/consumer'
@@ -73,4 +74,24 @@ class Otx < Sinatra::Base
       haml :"/offers/new"
     end
   end
+
+  get '/assets/new' do
+    @asset = Asset.new
+    haml :'/assets/new'
+  end
+
+  get '/assets/:id' do |id|
+    @assetv = Asset.find id
+    haml :'/assets/show'
+  end
+
+  post '/assets' do
+    @asset = Asset.new params[:asset]
+    if @asset.save
+      redirect "/assets/#{@asset.id}"
+    else
+      haml :'/assets/new'
+    end
+  end
+
 end

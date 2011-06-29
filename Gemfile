@@ -13,6 +13,7 @@ gem 'i18n'
 gem 'opentransact'
 gem 'RedCloth'
 gem 'state_machine'
+gem 'validate_url'
 
 group :development, :test do
   gem 'rspec'

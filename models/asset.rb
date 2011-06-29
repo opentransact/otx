@@ -2,15 +2,9 @@ class Asset < ActiveRecord::Base
   validates :transaction_url,       :presence => true, :uniqueness => true, :url => true
   validates :oauth_consumer_key,    :presence => true, :uniqueness => true
   validates :oauth_consumer_secret, :presence => true
-  validates :asset_url,                                                     :url => true, :allow_blank => true
+  validates :assets_url, :url => {:allow_nil => true}
 
-  scope :verified, where(:verified => true)
-
-  after_save :verify
-
-  private
-
-  def verify
-    # TODO: run discovery
+  def verified?
+    false # TODO
   end
 end

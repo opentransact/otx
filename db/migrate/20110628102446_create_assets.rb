@@ -5,7 +5,6 @@ class CreateAssets < ActiveRecord::Migration
       t.string :oauth_consumer_key, :null => false
       t.string :oauth_consumer_secret, :null => false
       t.string :assets_url
-      t.boolean :verified, :default => false
     end
 
     add_index :assets, :transaction_url, :unique => true
